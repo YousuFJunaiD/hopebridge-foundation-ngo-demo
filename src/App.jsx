@@ -5,63 +5,63 @@ const navItems = ['Home', 'About', 'Causes', 'Services', 'Impact', 'Contact'];
 const values = [
   {
     title: 'Compassion',
-    text: 'Care that begins with listening and dignity.',
+    text: 'Every helpful action starts with seeing people with dignity.',
   },
   {
     title: 'Community',
-    text: 'People coming together to protect shared hope.',
+    text: 'A better community is built by all of us, one choice at a time.',
   },
   {
     title: 'Action',
-    text: 'Simple programs that make daily life easier.',
+    text: 'Small steps become real change when people decide to care.',
   },
 ];
 
 const causes = [
   {
     icon: '📚',
-    title: 'Education Support',
-    text: 'Helping children stay curious, confident, and ready to learn.',
+    title: 'Lessons That Open Doors',
+    text: 'Helping children feel seen, supported, and ready to learn.',
     image:
       'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80',
     alt: 'Children learning together in a classroom setting',
   },
   {
     icon: '🍲',
-    title: 'Food Distribution',
-    text: 'Sharing meals and essentials with families who need support.',
+    title: 'Meals That Bring Relief',
+    text: 'Turning food support into comfort for families in need.',
     image:
       'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=900&q=80',
     alt: 'Volunteers preparing food support packages for distribution',
   },
   {
     icon: '🌸',
-    title: 'Women Empowerment',
-    text: 'Creating safe spaces for confidence, skills, and independence.',
+    title: 'Confidence for Women',
+    text: 'Creating space for skills, safety, and self-belief.',
     image:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80',
     alt: 'Women collaborating during a group learning session',
   },
   {
     icon: '🐾',
-    title: 'Animal Welfare',
-    text: 'Encouraging kindness, rescue awareness, and responsible care.',
+    title: 'Care Beyond People',
+    text: 'Encouraging kindness toward animals and responsible care.',
     image:
       'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=80',
     alt: 'Person gently caring for a dog outdoors',
   },
   {
     icon: '🌿',
-    title: 'Environmental Awareness',
-    text: 'Inspiring cleaner neighborhoods and greener everyday habits.',
+    title: 'Greener Shared Spaces',
+    text: 'Helping communities protect the places they call home.',
     image:
       'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=80',
     alt: 'Hands holding a young green plant for environmental awareness',
   },
   {
     icon: '🛠️',
-    title: 'Skill Development',
-    text: 'Opening doors through practical skills and guided learning.',
+    title: 'Skills for Tomorrow',
+    text: 'Opening new paths through practical, guided learning.',
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
     alt: 'Student using a laptop during a skill development workshop',
@@ -71,35 +71,35 @@ const causes = [
 const services = [
   {
     title: 'Volunteer Programs',
-    text: 'Join local drives, mentoring sessions, and care-based outreach.',
+    text: 'Give time where a friendly hand can make the day lighter.',
   },
   {
     title: 'Donation Drives',
-    text: 'Support food, learning kits, hygiene supplies, and essentials.',
+    text: 'Turn support into meals, learning kits, and daily essentials.',
   },
   {
     title: 'Awareness Campaigns',
-    text: 'Help communities learn about health, environment, and safety.',
+    text: 'Share knowledge that helps families make safer choices.',
   },
   {
     title: 'Student Support',
-    text: 'Encourage learners with resources, guidance, and motivation.',
+    text: 'Help students keep learning when resources feel out of reach.',
   },
   {
     title: 'Event Outreach',
-    text: 'Create focused support days for neighborhoods and schools.',
+    text: 'Bring care directly into schools and neighborhoods.',
   },
   {
     title: 'NGO Partnerships',
-    text: 'Collaborate with groups that share practical social goals.',
+    text: 'Work with others so good intentions become organized action.',
   },
 ];
 
 const stats = [
-  { number: '500+', label: 'Meals Distributed', text: 'Warm food support through demo community drives.' },
-  { number: '120+', label: 'Students Supported', text: 'Learners reached through resources and encouragement.' },
-  { number: '80+', label: 'Volunteers', text: 'People ready to give time, care, and practical help.' },
-  { number: '15+', label: 'Community Events', text: 'Awareness and outreach moments planned for local needs.' },
+  { number: '500+', label: 'Meals that brought relief', text: 'Every shared meal is a reminder that someone cared.' },
+  { number: '120+', label: 'Students given support', text: 'Learning support can protect confidence and possibility.' },
+  { number: '80+', label: 'Volunteers choosing to care', text: 'Time and kindness are powerful forms of service.' },
+  { number: '15+', label: 'Communities reached', text: 'Outreach matters when it meets people where they are.' },
 ];
 
 const gallery = [
@@ -144,19 +144,19 @@ const gallery = [
 const testimonials = [
   {
     quote:
-      'HopeBridge makes volunteering feel personal, organized, and meaningful.',
+      'I felt my time was valued and that even a small role could help someone feel supported.',
     name: 'Demo Volunteer',
     role: 'Community volunteer',
   },
   {
     quote:
-      'The donation journey feels clear, respectful, and connected to real needs.',
+      'The message is simple and honest: support can become food, learning, and relief.',
     name: 'Demo Donor',
     role: 'Monthly supporter',
   },
   {
     quote:
-      'The community session felt warm, useful, and easy for families to trust.',
+      'It felt respectful and hopeful, like the community was being invited to grow together.',
     name: 'Demo Community Member',
     role: 'Local participant',
   },
@@ -193,19 +193,25 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="nav-cta" href="#contact">
-          Donate Now
-        </a>
+        <div className="nav-actions">
+          <a className="nav-volunteer" href="#services">
+            Volunteer
+          </a>
+          <a className="nav-cta" href="#contact">
+            Donate Now
+          </a>
+        </div>
       </header>
 
       <main>
         <section className="hero" id="home">
           <div className="hero-content">
-            <p className="eyebrow">HOPEBRIDGE FOUNDATION</p>
-            <h1>Building Hope, One Community at a Time</h1>
+            <p className="eyebrow">CHANGE BEGINS WITH CARE</p>
+            <h1>Your small act can become someone’s hope.</h1>
             <p>
-              A demo social impact foundation bringing education, meals, care, and green action
-              closer to the people who need them most.
+              HopeBridge Foundation is a demo social impact initiative built around one simple
+              belief: every meal, every lesson, and every hour of support can help a life move
+              forward.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#contact">
@@ -213,6 +219,9 @@ function App() {
               </a>
               <a className="button secondary" href="#services">
                 Become a Volunteer
+              </a>
+              <a className="button ghost" href="#causes">
+                Start Helping Today
               </a>
             </div>
           </div>
@@ -222,8 +231,8 @@ function App() {
               alt="Smiling children gathered during a community support activity"
             />
             <figcaption>
-              <span>COMMUNITY-FIRST SUPPORT</span>
-              <strong>Every act of care becomes a bridge toward a safer, kinder tomorrow.</strong>
+              <span>SHARED RESPONSIBILITY</span>
+              <strong>A better community is not built by one person. It is built by all of us.</strong>
             </figcaption>
           </figure>
         </section>
@@ -231,8 +240,8 @@ function App() {
         <section className="section about-section" id="about">
           <SectionHeader
             eyebrow="WHO WE ARE"
-            title="A Small Bridge Between Care and Change"
-            text="HopeBridge is presented as a demo NGO concept built around practical help, human dignity, and community trust."
+            title="A bridge between kindness and real change"
+            text="HopeBridge is a demo NGO concept built around practical help, dignity, and the belief that caring for society is a shared responsibility."
           />
           <div className="about-grid">
             <article className="about-copy">
@@ -244,8 +253,8 @@ function App() {
               <p>
                 HopeBridge Foundation is a social impact initiative created to support underserved
                 communities through education, awareness, and practical help. The mission is simple:
-                create opportunities, offer essential support, and bring people together for
-                meaningful change.
+                make it easier for people to care, contribute, and stand beside communities that
+                need support.
               </p>
             </article>
             <div className="value-grid">
@@ -262,8 +271,8 @@ function App() {
         <section className="section" id="causes">
           <SectionHeader
             eyebrow="WHAT WE DO"
-            title="Our Causes"
-            text="We support communities through education, food assistance, women empowerment, animal welfare, environmental care, and skill-building."
+            title="Causes that turn care into action"
+            text="Every cause is a chance to help someone learn, eat, grow, heal, or feel less alone."
           />
           <div className="cause-grid">
             {causes.map((cause) => (
@@ -274,7 +283,7 @@ function App() {
                 </div>
                 <h3>{cause.title}</h3>
                 <p>{cause.text}</p>
-                <a href="#contact">Learn More</a>
+                <a href="#contact">Support This Cause</a>
               </article>
             ))}
           </div>
@@ -283,8 +292,8 @@ function App() {
         <section className="section services-section" id="services">
           <SectionHeader
             eyebrow="HOW WE HELP"
-            title="Services Built for Real Community Needs"
-            text="Clear, action-focused programs make it easier for volunteers, donors, and partners to contribute with purpose."
+            title="Simple ways to show up for others"
+            text="Whether you give time, resources, or awareness, your support can become practical help for someone else."
           />
           <div className="service-grid">
             {services.map((service, index) => (
@@ -300,8 +309,8 @@ function App() {
         <section className="section impact-section" id="impact">
           <SectionHeader
             eyebrow="OUR IMPACT"
-            title="Small Numbers, Meaningful Stories"
-            text="These demo metrics show how a focused foundation can communicate progress with clarity and warmth."
+            title="Every number points to a human moment"
+            text="These demo impact figures show how small actions can add up to relief, confidence, and community connection."
           />
           <div className="stats-grid">
             {stats.map((stat) => (
@@ -317,8 +326,8 @@ function App() {
         <section className="section gallery-section" id="gallery">
           <SectionHeader
             eyebrow="FIELD MOMENTS"
-            title="A Glimpse of Work in Action"
-            text="Warm, human-centered visuals help visitors quickly understand the kind of support HopeBridge represents."
+            title="Moments where hope becomes visible"
+            text="Images help visitors feel the heart of the work: learning, sharing, volunteering, and protecting the world around us."
           />
           <div className="gallery-grid">
             {gallery.map((item) => (
@@ -333,8 +342,8 @@ function App() {
         <section className="section testimonials-section" id="testimonials">
           <SectionHeader
             eyebrow="VOICES OF TRUST"
-            title="What Support Can Feel Like"
-            text="Simple demo testimonials show the emotional tone of a caring volunteer and donor community."
+            title="Why people choose to care"
+            text="These demo voices reflect the warmth, trust, and responsibility that strong community work can inspire."
           />
           <div className="testimonial-grid">
             {testimonials.map((testimonial) => (
@@ -350,8 +359,8 @@ function App() {
         <section className="section contact-section" id="contact">
           <SectionHeader
             eyebrow="GET INVOLVED"
-            title="Start a Conversation"
-            text="Reach out to volunteer, support a drive, or explore a community partnership with this demo foundation."
+            title="Start with one helpful step"
+            text="Your time, support, or kindness can become someone’s turning point. Reach out to volunteer, donate, or collaborate."
           />
           <div className="contact-grid">
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -365,20 +374,38 @@ function App() {
               </label>
               <label>
                 Message
-                <textarea name="message" rows="5" placeholder="How would you like to help?" required />
+                <textarea name="message" rows="5" placeholder="Tell us how you would like to help" required />
               </label>
-              <button type="submit">Submit</button>
+              <button type="submit">Send Message</button>
             </form>
             <aside className="contact-details">
               <h3>HopeBridge Foundation</h3>
               <p>
-                A demo social impact website for education, food support, women empowerment, animal
-                care, and environmental awareness.
+                Change begins when someone decides to care. Use this demo contact area to show how
+                supporters, volunteers, and partners can take the first step.
               </p>
               <a href="mailto:hello@hopebridge.org">hello@hopebridge.org</a>
               <a href="tel:+919876543210">+91 98765 43210</a>
               <span>India</span>
             </aside>
+          </div>
+        </section>
+        <section className="final-cta" aria-labelledby="final-cta-title">
+          <div>
+            <p className="eyebrow">START HELPING TODAY</p>
+            <h2 id="final-cta-title">Your support can become someone’s turning point.</h2>
+            <span>
+              Whether you donate, volunteer, or simply spread the word, your action can help create
+              real change.
+            </span>
+          </div>
+          <div className="final-cta-actions">
+            <a className="button primary" href="#contact">
+              Donate Now
+            </a>
+            <a className="button secondary" href="#services">
+              Join as Volunteer
+            </a>
           </div>
         </section>
       </main>
