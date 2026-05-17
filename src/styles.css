@@ -1,4 +1,14 @@
 :root {
+  --ink: #173029;
+  --muted: #5d746e;
+  --green: #126044;
+  --green-2: #2c8a72;
+  --blue: #2f9fcb;
+  --paper: #ffffff;
+  --soft: #f7fbf8;
+  --line: rgba(28, 95, 78, 0.14);
+  --shadow: 0 22px 60px rgba(21, 66, 54, 0.11);
+  --shadow-hover: 0 30px 76px rgba(18, 96, 68, 0.18);
   color: #173029;
   background: #f7fbf8;
   font-family:
@@ -18,7 +28,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f7fbf8;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(47, 159, 203, 0.11), transparent 22rem),
+    radial-gradient(circle at 92% 18%, rgba(44, 138, 114, 0.12), transparent 24rem),
+    #f7fbf8;
   color: #173029;
 }
 
@@ -43,8 +56,8 @@ textarea {
   gap: 18px;
   padding: 16px clamp(18px, 4vw, 56px);
   border-bottom: 1px solid rgba(28, 95, 78, 0.12);
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 14px 34px rgba(24, 55, 46, 0.06);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(24, 55, 46, 0.08);
   backdrop-filter: blur(16px);
 }
 
@@ -98,9 +111,9 @@ textarea {
 }
 
 .nav-cta {
-  background: #126044;
+  background: linear-gradient(135deg, #126044, #2c8a72);
   color: #ffffff;
-  box-shadow: 0 12px 28px rgba(18, 96, 68, 0.22);
+  box-shadow: 0 14px 34px rgba(18, 96, 68, 0.24);
   white-space: nowrap;
 }
 
@@ -110,6 +123,8 @@ textarea {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   display: grid;
   min-height: calc(100vh - 76px);
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.72fr);
@@ -124,7 +139,19 @@ textarea {
   color: #ffffff;
 }
 
+.hero::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 20%, rgba(255, 255, 255, 0.14), transparent 18rem),
+    linear-gradient(90deg, rgba(7, 42, 33, 0.28), transparent 58%);
+  content: "";
+  pointer-events: none;
+}
+
 .hero-content {
+  position: relative;
+  z-index: 1;
   max-width: 780px;
   animation: rise 700ms ease both;
 }
@@ -135,7 +162,7 @@ textarea {
   color: #2c8a72;
   font-size: 0.78rem;
   font-weight: 850;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -146,8 +173,8 @@ textarea {
 .hero h1 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.9rem, 7vw, 6.3rem);
-  line-height: 0.96;
+  font-size: 5.6rem;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -155,7 +182,7 @@ textarea {
   max-width: 680px;
   margin: 24px 0 0;
   color: #f0fbf7;
-  font-size: clamp(1.05rem, 2vw, 1.26rem);
+  font-size: 1.18rem;
   line-height: 1.75;
 }
 
@@ -172,7 +199,8 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0 24px;
+  padding: 0 26px;
+  border: 1px solid transparent;
   font-weight: 850;
   transition:
     transform 180ms ease,
@@ -187,7 +215,7 @@ textarea {
 .button.primary {
   background: #ffffff;
   color: #126044;
-  box-shadow: 0 16px 38px rgba(6, 37, 29, 0.22);
+  box-shadow: 0 16px 38px rgba(6, 37, 29, 0.25);
 }
 
 .button.secondary {
@@ -207,9 +235,9 @@ textarea {
   gap: 26px;
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 28px;
+  border-radius: 30px;
   background: #123c34;
-  box-shadow: 0 28px 70px rgba(5, 39, 31, 0.2);
+  box-shadow: 0 34px 86px rgba(5, 39, 31, 0.28);
   animation: rise 700ms 120ms ease both;
 }
 
@@ -248,25 +276,32 @@ textarea {
 
 .hero-panel figcaption strong {
   max-width: 420px;
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: 1.8rem;
   line-height: 1.18;
 }
 
 .section {
-  padding: clamp(62px, 8vw, 104px) clamp(20px, 5vw, 72px);
+  position: relative;
+  padding: 96px clamp(20px, 5vw, 72px);
+}
+
+.section:nth-of-type(odd):not(.hero) {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(47, 159, 203, 0.08), transparent 20rem),
+    #f7fbf8;
 }
 
 .section-header {
   max-width: 780px;
-  margin: 0 auto 34px;
+  margin: 0 auto 42px;
   text-align: center;
 }
 
 .section-header h2 {
   margin: 0;
   color: #123c34;
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1.08;
+  font-size: 3rem;
+  line-height: 1.1;
   letter-spacing: 0;
 }
 
@@ -275,6 +310,7 @@ textarea {
   max-width: 650px;
   margin: 16px auto 0;
   color: #5d746e;
+  font-size: 1.04rem;
   line-height: 1.7;
 }
 
@@ -302,14 +338,15 @@ textarea {
 .contact-form,
 .contact-details {
   border: 1px solid rgba(28, 95, 78, 0.12);
-  border-radius: 22px;
+  border-radius: 24px;
   background: #ffffff;
-  box-shadow: 0 18px 48px rgba(26, 61, 52, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .about-copy {
   overflow: hidden;
-  padding: clamp(24px, 4vw, 38px);
+  height: 100%;
+  padding: 28px;
   background: linear-gradient(145deg, #eaf8f1, #ffffff);
 }
 
@@ -324,18 +361,33 @@ textarea {
 .about-copy p {
   margin: 0;
   color: #405d55;
-  font-size: 1.08rem;
-  line-height: 1.85;
+  font-size: 1.03rem;
+  line-height: 1.78;
 }
 
 .value-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
 .value-card {
-  padding: 22px;
+  display: grid;
+  min-height: 0;
+  align-content: center;
+  padding: 26px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(232, 247, 240, 0.75));
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.value-card:hover {
+  border-color: rgba(44, 138, 114, 0.34);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
 }
 
 .value-card h3,
@@ -349,6 +401,8 @@ textarea {
 
 .value-card p,
 .cause-card p,
+.service-card p,
+.stat-card p,
 .testimonial-card p,
 .contact-details p {
   margin: 12px 0 0;
@@ -364,13 +418,15 @@ textarea {
   max-width: 1120px;
   margin: 0 auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px;
+  align-items: stretch;
 }
 
 .cause-card {
   display: flex;
   overflow: hidden;
-  min-height: 390px;
+  height: 100%;
+  min-height: 430px;
   flex-direction: column;
   padding: 0;
   transition:
@@ -381,7 +437,7 @@ textarea {
 
 .cause-card > img {
   width: 100%;
-  height: 170px;
+  height: 188px;
   object-fit: cover;
 }
 
@@ -390,7 +446,7 @@ textarea {
 .stat-card:hover,
 .testimonial-card:hover {
   border-color: rgba(32, 148, 111, 0.36);
-  box-shadow: 0 24px 58px rgba(20, 96, 73, 0.13);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-4px);
 }
 
@@ -401,7 +457,8 @@ textarea {
   place-items: center;
   margin: -26px 24px 18px;
   border-radius: 16px;
-  background: #e8f7f0;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(18, 96, 68, 0.14);
   font-size: 1.65rem;
   position: relative;
 }
@@ -413,20 +470,47 @@ textarea {
   margin-right: 24px;
 }
 
+.cause-card h3 {
+  min-height: 52px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cause-card p {
+  margin-bottom: 22px;
+  font-size: 0.98rem;
+}
+
 .cause-card a {
   width: fit-content;
   margin-top: auto;
   margin-bottom: 24px;
   border-radius: 999px;
   padding: 10px 14px;
-  background: #eff8fb;
+  background: linear-gradient(135deg, #eff8fb, #e8f7f0);
   color: #126044;
   font-weight: 850;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.cause-card a:hover {
+  background: #126044;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(18, 96, 68, 0.2);
+  transform: translateY(-1px);
 }
 
 .service-card {
-  min-height: 150px;
-  padding: 24px;
+  display: flex;
+  min-height: 210px;
+  height: 100%;
+  flex-direction: column;
+  padding: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(238, 248, 251, 0.8));
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -435,13 +519,30 @@ textarea {
 
 .service-card span {
   display: inline-block;
-  margin-bottom: 28px;
+  width: fit-content;
+  margin-bottom: 30px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #e8f7f0;
   color: #2c8a72;
   font-weight: 900;
 }
 
+.service-card h3 {
+  min-height: 54px;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.service-card p {
+  margin-top: auto;
+  font-size: 0.98rem;
+}
+
 .impact-section {
-  background: linear-gradient(135deg, #e8f7f0, #eef8fb);
+  background:
+    linear-gradient(135deg, rgba(232, 247, 240, 0.95), rgba(238, 248, 251, 0.95)),
+    radial-gradient(circle at 82% 8%, rgba(47, 159, 203, 0.14), transparent 22rem);
 }
 
 .stats-grid {
@@ -449,8 +550,13 @@ textarea {
 }
 
 .stat-card {
-  padding: 28px 20px;
-  text-align: center;
+  display: flex;
+  min-height: 240px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 22px;
+  text-align: left;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -460,7 +566,7 @@ textarea {
 .stat-card strong {
   display: block;
   color: #126044;
-  font-size: clamp(2.1rem, 4vw, 3.5rem);
+  font-size: 3.1rem;
   line-height: 1;
 }
 
@@ -471,20 +577,34 @@ textarea {
   font-weight: 800;
 }
 
+.stat-card p {
+  font-size: 0.95rem;
+}
+
 .gallery-grid {
   display: grid;
   max-width: 1120px;
   margin: 0 auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 22px;
+  align-items: stretch;
 }
 
 .gallery-card {
   overflow: hidden;
+  height: 100%;
   margin: 0;
   border-radius: 24px;
   background: #ffffff;
-  box-shadow: 0 18px 42px rgba(26, 61, 52, 0.08);
+  box-shadow: var(--shadow);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.gallery-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
 }
 
 .gallery-card img {
@@ -506,7 +626,13 @@ textarea {
 }
 
 .testimonial-card {
-  padding: 24px;
+  display: flex;
+  min-height: 250px;
+  height: 100%;
+  flex-direction: column;
+  padding: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(232, 247, 240, 0.55));
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -516,6 +642,11 @@ textarea {
 .testimonial-card p {
   margin-top: 0;
   font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.testimonial-card h3 {
+  margin-top: auto;
 }
 
 .testimonial-card span {
@@ -526,7 +657,9 @@ textarea {
 }
 
 .contact-section {
-  background: linear-gradient(135deg, #f7fbf8, #eef8fb);
+  background:
+    linear-gradient(135deg, #f7fbf8, #eef8fb),
+    radial-gradient(circle at 12% 16%, rgba(44, 138, 114, 0.1), transparent 20rem);
 }
 
 .contact-grid {
@@ -534,13 +667,14 @@ textarea {
   max-width: 980px;
   margin: 0 auto;
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 20px;
+  gap: 24px;
+  align-items: stretch;
 }
 
 .contact-form {
   display: grid;
-  gap: 16px;
-  padding: 26px;
+  gap: 18px;
+  padding: 30px;
 }
 
 .contact-form label {
@@ -554,7 +688,7 @@ textarea {
 .contact-form textarea {
   width: 100%;
   border: 1px solid rgba(28, 95, 78, 0.18);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 13px 14px;
   background: #f9fcfa;
   color: #173029;
@@ -571,10 +705,19 @@ textarea {
   min-height: 50px;
   border: 0;
   border-radius: 999px;
-  background: #126044;
+  background: linear-gradient(135deg, #126044, #2c8a72);
   color: #ffffff;
   cursor: pointer;
   font-weight: 900;
+  box-shadow: 0 16px 34px rgba(18, 96, 68, 0.22);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 20px 44px rgba(18, 96, 68, 0.28);
+  transform: translateY(-2px);
 }
 
 .contact-details {
@@ -582,8 +725,10 @@ textarea {
   flex-direction: column;
   gap: 12px;
   justify-content: center;
-  padding: 26px;
-  background: #123c34;
+  padding: 30px;
+  background:
+    linear-gradient(145deg, rgba(18, 60, 52, 0.96), rgba(18, 96, 68, 0.92)),
+    radial-gradient(circle at top right, rgba(47, 159, 203, 0.2), transparent 14rem);
   color: #ffffff;
 }
 
@@ -677,6 +822,14 @@ textarea {
     min-height: auto;
   }
 
+  .hero h1 {
+    font-size: 4.2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
   .hero-panel {
     min-height: 320px;
   }
@@ -718,7 +871,19 @@ textarea {
   }
 
   .hero h1 {
-    font-size: clamp(2.5rem, 14vw, 3.6rem);
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.04rem;
+  }
+
+  .section {
+    padding: 72px 18px;
+  }
+
+  .section-header h2 {
+    font-size: 2.15rem;
   }
 
   .hero-actions,
@@ -742,6 +907,17 @@ textarea {
   }
 
   .cause-card {
+    min-height: auto;
+  }
+
+  .cause-card h3,
+  .service-card h3 {
+    min-height: auto;
+  }
+
+  .stat-card,
+  .testimonial-card,
+  .service-card {
     min-height: auto;
   }
 }
